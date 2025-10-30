@@ -93,7 +93,7 @@ function isElementInViewport(el) {
 
 // Função para adicionar animação aos cards quando aparecem na tela
 function animateOnScroll() {
-    const cards = document.querySelectorAll('.service-card, .testimonial-card');
+    const cards = document.querySelectorAll('.service-card, .testimonial-card, .team-card');
     
     cards.forEach((card, index) => {
         if (isElementInViewport(card)) {
@@ -108,7 +108,7 @@ function animateOnScroll() {
 
 // Inicializa os cards com opacidade 0 e deslocados
 document.addEventListener('DOMContentLoaded', () => {
-    const cards = document.querySelectorAll('.service-card, .testimonial-card');
+    const cards = document.querySelectorAll('.service-card, .testimonial-card, .team-card');
     cards.forEach(card => {
         card.style.opacity = '0';
         card.style.transform = 'translateY(20px)';
@@ -121,6 +121,111 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Adiciona o evento de scroll para animar os cards
 window.addEventListener('scroll', animateOnScroll);
+
+// ===================================
+// CARROSSEL DE GALERIA
+// ===================================
+
+document.addEventListener('DOMContentLoaded', () => {
+    const track = document.querySelector('.gallery-track');
+    const slides = Array.from(track.children);
+    const nextButton = document.querySelector('.carousel-btn-next');
+    const prevButton = document.querySelector('.carousel-btn-prev');
+    const dotsContainer = document.querySelector('.gallery-dots');
+    
+    // Verifica se os elementos existem antes de continuar
+    if (!track || slides.length === 0) return;
+    
+    const slideWidth = slides[0].getBoundingClientRect().width;
+    
+    // Cria os dots de navegação
+    slides.forEach((_, index) => {
+        const dot = document.createElement('button');
+        dot.classList.add('gallery-dot');
+        dot.setAttribute('aria-label', `Ir para foto ${index + 1}`);
+        if (index === 0) dot.classList.add('active');
+        dotsContainer.appendChild(dot);
+    });
+    
+    const dots = Array.from(dotsContainer.children);
+    
+    // Posiciona os slides lado a lado
+    slides.forEach((slide, index) => {
+        slide.style.left = slideWidth * index + 'px';
+    });
+    
+    let currentSlide = 0;
+    
+    // Função para mover para um slide específico
+    const moveToSlide = (targetIndex) => {
+        const currentDot = dots[currentSlide];
+        const targetDot = dots[targetIndex];
+        
+        track.style.transform = 'translateX(-' + (slideWidth * targetIndex) + 'px)';
+        
+        currentDot.classList.remove('active');
+        targetDot.classList.add('active');
+        
+        currentSlide = targetIndex;
+    };
+    
+    // Botão próximo
+    nextButton.addEventListener('click', () => {
+        const nextIndex = currentSlide === slides.length - 1 ? 0 : currentSlide + 1;
+        moveToSlide(nextIndex);
+    });
+    
+    // Botão anterior
+    prevButton.addEventListener('click', () => {
+        const prevIndex = currentSlide === 0 ? slides.length - 1 : currentSlide - 1;
+        moveToSlide(prevIndex);
+    });
+    
+    // Navegação por dots
+    dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+            moveToSlide(index);
+        });
+    });
+    
+    // Auto-play do carrossel (opcional - a cada 5 segundos)
+    setInterval(() => {
+        const nextIndex = currentSlide === slides.length - 1 ? 0 : currentSlide + 1;
+        moveToSlide(nextIndex);
+    }, 5000);
+});
+
+// ===================================
+// FAQ (PERGUNTAS FREQUENTES)
+// ===================================
+
+document.addEventListener('DOMContentLoaded', () => {
+    const faqQuestions = document.querySelectorAll('.faq-question');
+    
+    faqQuestions.forEach(question => {
+        question.addEventListener('click', () => {
+            const isExpanded = question.getAttribute('aria-expanded') === 'true';
+            const answer = question.nextElementSibling;
+            
+            // Fecha todas as outras respostas
+            faqQuestions.forEach(q => {
+                if (q !== question) {
+                    q.setAttribute('aria-expanded', 'false');
+                    q.nextElementSibling.classList.remove('active');
+                }
+            });
+            
+            // Toggle da resposta atual
+            if (isExpanded) {
+                question.setAttribute('aria-expanded', 'false');
+                answer.classList.remove('active');
+            } else {
+                question.setAttribute('aria-expanded', 'true');
+                answer.classList.add('active');
+            }
+        });
+    });
+});
 
 // ===================================
 // PREVENÇÃO DE COMPORTAMENTO PADRÃO
@@ -139,4 +244,3 @@ document.querySelectorAll('a[href="#"]').forEach(link => {
 
 console.log('🐾 Landing Page da Kikão carregada com sucesso!');
 console.log('💛 Desenvolvido por @mayasrl');
-
