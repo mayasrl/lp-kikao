@@ -711,13 +711,14 @@ img {
 
 .gallery-carousel {
     position: relative;
-    overflow: hidden;
+    overflow: visible;
 }
 
 .gallery-track-container {
     overflow: hidden;
     border-radius: 1.25rem;
     box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.15);
+    margin-bottom: 1rem;
 }
 
 .gallery-track {
