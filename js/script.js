@@ -48,49 +48,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-function isElementInViewport(el) {
-    const rect = el.getBoundingClientRect();
-    return (
-        rect.top >= 0 &&
-        rect.left >= 0 &&
-        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-    );
-}
-
-function animateOnScroll() {
-    const serviceCards = document.querySelectorAll('.service-card');
-    const teamCards = document.querySelectorAll('.team-card');
-    const testimonialCards = document.querySelectorAll('.testimonial-card');
-    
-    serviceCards.forEach((card, index) => {
-        if (isElementInViewport(card)) {
-            setTimeout(() => {
-                card.style.opacity = '1';
-                card.style.transform = 'translateY(0)';
-            }, index * 100);
-        }
-    });
-    
-    teamCards.forEach((card, index) => {
-        if (isElementInViewport(card)) {
-            setTimeout(() => {
-                card.style.opacity = '1';
-                card.style.transform = 'translateY(0)';
-            }, index * 100);
-        }
-    });
-    
-    testimonialCards.forEach((card, index) => {
-        if (isElementInViewport(card)) {
-            setTimeout(() => {
-                card.style.opacity = '1';
-                card.style.transform = 'translateY(0)';
-            }, index * 100);
-        }
-    });
-}
-
 document.addEventListener('DOMContentLoaded', () => {
     const cards = document.querySelectorAll('.service-card, .testimonial-card, .team-card');
     cards.forEach(card => {
@@ -99,10 +56,21 @@ document.addEventListener('DOMContentLoaded', () => {
         card.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
     });
     
-    animateOnScroll();
+    function animateCards() {
+        cards.forEach((card, index) => {
+            const rect = card.getBoundingClientRect();
+            if (rect.top < window.innerHeight && rect.bottom > 0) {
+                setTimeout(() => {
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, index * 100);
+            }
+        });
+    }
+    
+    animateCards();
+    window.addEventListener('scroll', animateCards);
 });
-
-window.addEventListener('scroll', animateOnScroll);
 
 document.addEventListener('DOMContentLoaded', () => {
     const track = document.querySelector('.gallery-track');
