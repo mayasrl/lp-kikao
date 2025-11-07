@@ -324,6 +324,7 @@ img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center; /* Centraliza a imagem verticalmente e horizontalmente */
 }
 
 .team-info {
@@ -410,8 +411,8 @@ img {
 }
 
 .contact-icon {
-    font-size: 2rem;
-    min-width: 3.125rem;
+    font-size: 1.5rem;
+    min-width: 2.5rem;
 }
 
 .contact-item h3 {
@@ -652,17 +653,24 @@ img {
    ESTILOS PARA ÍCONES SVG
    =================================== */
 .icon {
-    width: 3rem;
-    height: 3rem;
+    width: 2.5rem;
+    height: 2.5rem;
     fill: var(--cor-primaria);
 }
 
 .icon-faq {
-    width: 1.5rem;
-    height: 1.5rem;
+    width: 2.5rem;
+    height: 2.5rem;
     fill: var(--cor-primaria);
     flex-shrink: 0;
 }
+
+.icon-service {
+    width: 5rem;
+    height: 5rem;
+    fill: currentColor;
+}
+
 
 .icon-star-large {
     width: 5rem;
@@ -1117,8 +1125,8 @@ img {
     }
     
     .icon-faq {
-        width: 1.25rem;
-        height: 1.25rem;
+        width: 2rem;
+        height: 2rem;
     }
     
     .faq-answer {

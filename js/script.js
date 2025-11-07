@@ -125,10 +125,6 @@ document.addEventListener('DOMContentLoaded', () => {
     
     const dots = Array.from(dotsContainer.children);
     
-    slides.forEach((slide, index) => {
-        slide.style.left = slideWidth * index + 'px';
-    });
-    
     let currentSlide = 0;
     
     const moveToSlide = (targetIndex) => {
@@ -162,7 +158,7 @@ document.addEventListener('DOMContentLoaded', () => {
     setInterval(() => {
         const nextIndex = currentSlide === slides.length - 1 ? 0 : currentSlide + 1;
         moveToSlide(nextIndex);
-    }, 5000);
+    }, 8000);
 });
 
 document.addEventListener('DOMContentLoaded', () => {
