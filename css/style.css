@@ -1,6 +1,4 @@
-/* ===================================
-   VARIÁVEIS CSS - Cores da Marca Kikão
-   =================================== */
+/* Variáveis de cores e espaçamentos */
 :root {
     --cor-primaria: #B8587D;
     --cor-secundaria: #B4264A;
@@ -24,9 +22,6 @@
     --transicao-rapida: 0.3s ease;
 }
 
-/* ===================================
-   RESET E ESTILOS GLOBAIS
-   =================================== */
 * {
     margin: 0;
     padding: 0;
@@ -62,9 +57,6 @@ img {
     display: block;
 }
 
-/* ===================================
-   HEADER / NAVEGAÇÃO
-   =================================== */
 .header {
     background-color: var(--cor-branco);
     box-shadow: var(--sombra-leve);
@@ -133,9 +125,6 @@ img {
     transition: var(--transicao-rapida);
 }
 
-/* ===================================
-   SEÇÃO HERO (PRINCIPAL)
-   =================================== */
 .hero {
     background: linear-gradient(135deg, var(--cor-primaria), var(--cor-secundaria));
     color: var(--cor-branco);
@@ -184,9 +173,6 @@ img {
     box-shadow: var(--sombra-media);
 }
 
-/* ===================================
-   TÍTULOS DE SEÇÃO
-   =================================== */
 .section-title {
     font-size: 2rem;
     font-weight: 700;
@@ -202,9 +188,6 @@ img {
     font-size: 1.1rem;
 }
 
-/* ===================================
-   SEÇÃO DE SERVIÇOS
-   =================================== */
 .services {
     padding: var(--espacamento-grande) 0;
     background-color: var(--cor-fundo);
@@ -246,9 +229,6 @@ img {
     font-size: 0.95rem;
 }
 
-/* ===================================
-   SEÇÃO SOBRE NÓS
-   =================================== */
 .about {
     padding: var(--espacamento-grande) 0;
 }
@@ -283,9 +263,6 @@ img {
     border-radius: 0.9375rem;
 }
 
-/* ===================================
-   SEÇÃO EQUIPE VETERINÁRIA
-   =================================== */
 .team {
     padding: var(--espacamento-grande) 0;
     background-color: var(--cor-fundo);
@@ -351,9 +328,6 @@ img {
     font-weight: 500;
 }
 
-/* ===================================
-   SEÇÃO DE DEPOIMENTOS
-   =================================== */
 .testimonials {
     padding: var(--espacamento-grande) 0;
     background-color: var(--cor-fundo);
@@ -385,9 +359,6 @@ img {
     color: var(--cor-primaria);
 }
 
-/* ===================================
-   SEÇÃO DE CONTATO
-   =================================== */
 .contact {
     padding: var(--espacamento-grande) 0;
 }
@@ -451,9 +422,6 @@ img {
     font-size: 1.1rem;
 }
 
-/* ===================================
-   FOOTER
-   =================================== */
 .footer {
     background-color: var(--cor-secundaria);
     color: var(--cor-branco);
@@ -505,9 +473,6 @@ img {
     color: var(--cor-rosa-claro);
 }
 
-/* ===================================
-   BOTÃO FLUTUANTE DO WHATSAPP
-   =================================== */
 .whatsapp-float {
     position: fixed;
     bottom: 1.875rem;
@@ -542,9 +507,6 @@ img {
     height: 2.1875rem;
 }
 
-/* ===================================
-   RESPONSIVIDADE - TABLETS
-   =================================== */
 @media (max-width: 48rem) {
     .menu-toggle {
         display: flex;
@@ -600,9 +562,6 @@ img {
     }
 }
 
-/* ===================================
-   RESPONSIVIDADE - MOBILE
-   =================================== */
 @media (max-width: 30rem) {
     .hero {
         padding: 3rem 0;
@@ -649,9 +608,6 @@ img {
         height: 1.75rem;
     }
 }
-/* ===================================
-   ESTILOS PARA ÍCONES SVG
-   =================================== */
 .icon {
     width: 2.5rem;
     height: 2.5rem;
@@ -684,9 +640,6 @@ img {
     fill: #FFD700;
 }
 
-/* ===================================
-   SEÇÃO DE GALERIA (CARROSSEL)
-   =================================== */
 .gallery {
     padding: var(--espacamento-grande) 0;
     background-color: var(--cor-branco);
@@ -825,9 +778,6 @@ img {
     transform: scale(1.3);
 }
 
-/* ===================================
-   SEÇÃO DE FAQ (PERGUNTAS FREQUENTES)
-   =================================== */
 .faq {
     padding: var(--espacamento-grande) 0;
     background-color: var(--cor-fundo);
@@ -951,9 +901,6 @@ img {
     text-decoration: underline;
 }
 
-/* ===================================
-   SEÇÃO DE AVALIAÇÕES (REVIEWS)
-   =================================== */
 .reviews {
     padding: var(--espacamento-grande) 0;
     background-color: var(--cor-branco);
@@ -1001,9 +948,6 @@ img {
     margin-bottom: 1rem;
 }
 
-/* ===================================
-   FOOTER BOTTOM
-   =================================== */
 .footer-bottom {
     text-align: center;
     padding-top: 2rem;
@@ -1015,9 +959,6 @@ img {
     margin-bottom: 0.5rem;
 }
 
-/* ===================================
-   RESPONSIVIDADE - GALERIA E FAQ
-   =================================== */
 @media (max-width: 48rem) {
     .gallery-content {
         grid-template-columns: 1fr;
