@@ -2,7 +2,7 @@
   "name": "Kikão - Clínica Veterinária",
   "short_name": "Kikão",
   "description": "Clínica veterinária, pet shop e hotelzinho em Montes Claros - MG",
-  "start_url": "/",
+  "start_url": "./",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#c2185b",
