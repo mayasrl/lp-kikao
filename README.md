@@ -66,6 +66,8 @@ lk-kikao/
 
 Este projeto foi desenvolvido sob medida para a Clínica Veterinária Kikão e seu código é de propriedade da mesma.
 
+---
+
 <p align="center">
   Desenvolvido com 💛 por <strong>Maria Silveira (@mayasrl)</strong>.
 </p>
