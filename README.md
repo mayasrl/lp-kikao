@@ -69,5 +69,6 @@ Este projeto foi desenvolvido sob medida para a Clínica Veterinária Kikão e s
 ---
 
 <p align="center">
-  Desenvolvido com 💛 por <strong>Maria Silveira (@mayasrl)</strong>.
+  Desenvolvido com 💛 por <strong>@mayasrl</strong>.
 </p>
+
